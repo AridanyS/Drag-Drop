@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './styles/app.css'
+//import App from './components/App.jsx'
+import { Card } from './components/Cards.jsx'
+import './components/Cards.css'
+import './styles/main.css'
 import './styles/header.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Card />
   </React.StrictMode>,
 )

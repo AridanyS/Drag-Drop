@@ -1,0 +1,31 @@
+article {
+  height: auto;
+  display: flex;
+  margin: 1rem;
+}
+
+.card-box1 {
+  width: 10%;
+  border: 1px solid blue;
+  background-color: #905873;
+  cursor: pointer;
+}
+.card-box1:hover {
+  background-color: #8a3a61;
+  opacity: 0.8;
+}
+
+.addList {
+  background-color: #935579;
+  all: unset;
+  color: white;
+
+}
+.addList:hover {
+}
+input {
+  height: auto;
+  border-radius: 12px;
+  background-color: #22272b;
+  color: #abb6c3;
+}
