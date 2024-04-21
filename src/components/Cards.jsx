@@ -4,7 +4,7 @@ export function Card() {
       <article className="article-card1">
         <section className="card-box1">
        
-          <button onClick={onClick} className="addList">Añade una lista</button>
+          <button onClick={onClick} className="addList">+ Añade una lista</button>
         </section>
       </article>
 
@@ -15,6 +15,6 @@ export function Card() {
 
 function onClick() {
     return(
-    <input type="text" placeholder="Introduzca título de la lista"></input>) 
+    <input className="inputTitle" type="text" placeholder="Introduzca título de la lista"></input>) 
 
 }
