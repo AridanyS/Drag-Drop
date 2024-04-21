@@ -7,7 +7,7 @@ article {
 .card-box1 {
   display: flex;
   width: auto;
-  padding: 1%;
+  padding: 0.3%;
   background-color: #9b6680;
   cursor: pointer;
   border-radius: 12px;
@@ -23,7 +23,43 @@ article {
   all: unset;
   color: white;
   height: 2em;
+}
+.article-card2{
+  display: flex;
+    background-color: black;
+    width: 20%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+.BlackCard{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: black;
+  height: 60px;
+  
+}
+input{
+  grid-area: 1 / 1 / 2 / 3; 
+  color: #9FADBC;
+  background-color: #282E33;
+  padding: 2%;
+  margin: 5px;
+  border-radius: 5px;
 
 }
 
 
+::placeholder{
+  font-weight: bold;
+  color: #9FADBC;
+}
+.AddListButton{
+  grid-area: 2 / 1 / 3 / 2; 
+}
+.X{
+  grid-area: 2 / 2 / 3 / 3;
+}
