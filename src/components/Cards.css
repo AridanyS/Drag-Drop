@@ -24,8 +24,18 @@ article {
   all: unset;
   color: white;
   height: 2em;
+  width: 218px;
+    border-radius: 12px;
+    padding: 3px;
 }
-
+.mas{
+  background-color: #935579;
+  all: unset;
+  color: white;
+  font-size: large;
+  margin-right: 5px;
+  margin-left: 5px;
+}
 /*Funtion AddListName*/
 .article-card2 {
   display: flex;
@@ -73,9 +83,8 @@ input:focus {
   background-color: #5795eb;
   width: 98px;
   height: 32px;
-    margin: 5px 0px 0px 0px;
-    border-radius: 5px;
-    
+  margin: 5px 0px 0px 0px;
+  border-radius: 5px;
 }
 .AddListButton:hover {
   background-color: #75abf7;
@@ -95,6 +104,6 @@ input:focus {
   right: 28px;
   border-radius: 5px;
 }
-.X:hover{
+.X:hover {
   background-color: #282e33;
 }

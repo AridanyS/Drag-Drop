@@ -14,7 +14,7 @@ export function Card() {
       <article className="article-card1">
         <section className="card-box1">
           <button onClick={handleadd} className="addList">
-            + Añade una lista
+            <span className="mas">+</span> Añade una lista
           </button>
         </section>
       </article>
