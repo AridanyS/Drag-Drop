@@ -23,19 +23,18 @@ export function Card() {
 }
 
 function AddListName() {
-  
   return (
     <>
-    <article className="article-card2">
-      <div className="BlackCard">
-        <input
-          className="inputTitle"
-          type="text"
-          placeholder="Introduzca título de la lista..."
-        ></input>
-        <button className="AddListButton">Añadir Lista</button> 
-        <div className="X">x</div>
-      </div>
+      <article className="article-card2">
+        <div className="BlackCard">
+          <input
+            className="inputTitle"
+            type="text"
+            placeholder="Introduzca título de la lista..."
+          ></input>
+          <button className="AddListButton">Añadir Lista</button>
+          <button className="X">x</button>
+        </div>
       </article>
     </>
   );
