@@ -25,10 +25,10 @@ article {
   color: white;
   height: 2em;
   width: 218px;
-    border-radius: 12px;
-    padding: 3px;
+  border-radius: 12px;
+  padding: 3px;
 }
-.mas{
+.mas {
   background-color: #935579;
   all: unset;
   color: white;
