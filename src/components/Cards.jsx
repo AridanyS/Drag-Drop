@@ -1,4 +1,4 @@
-//import { AddListName } from "./AddListName";
+
 import { useState } from "react";
 /*
 export function Card() {
@@ -101,12 +101,13 @@ function AddListName() {
             Añadir Lista
           </button>
           <button className="X">x</button>
-        </div>
+        
         {lists.map((item, index) => (
           <div key={index} className="list-item">
             <div className="make-up">{item}</div>
           </div>
-        ))}
+          
+        ))}</div>
       </div>
     </article>
   );

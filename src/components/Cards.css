@@ -41,20 +41,19 @@ article {
   display: flex;
   background-color: black;
   width: 275px;
-  height: 88px;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
+  padding: 10px 0px 5px 0px;
 }
 .BlackCard {
   display: grid;
   width: 254px;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   background-color: black;
-  height: 70px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-row-gap: 5px;
+
 }
 .inputTitle {
   width: 250px;
@@ -66,6 +65,7 @@ input {
   border-radius: 5px;
   border: 2px solid rgb(92, 92, 92);
   font-weight: bold;
+
 }
 input:focus {
   outline: none;
@@ -85,7 +85,7 @@ input:focus {
   background-color: #5795eb;
   width: 98px;
   height: 32px;
-  margin: 5px 0px 0px 0px;
+  margin: 5px 0px 5px 0px;
   border-radius: 5px;
   color: rgb(29, 33, 37);
   font-weight: 500;
@@ -102,17 +102,21 @@ input:focus {
   font-size: 1.2em;
   cursor: pointer;
   border-style: none;
-  margin: 5px 0px 0px 0px;
   position: relative;
   border-radius: 5px;
+  height: 33px;
 }
+
 .X:hover {
   background-color: #282e33;
 }
 .list-item {
-  width: 242px;
+  width: 100%;
 }
 .make-up {
-  max-width: 100%;
-  overflow: hidden;
+  background-color: #22262a;
+  color: #b7c2ce;
+ 
+  padding: 5px;
+  margin-bottom: 5px;
 }
