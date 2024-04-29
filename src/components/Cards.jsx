@@ -96,15 +96,17 @@ function AddListName() {
           onChange={handleChange}
           onKeyDown={handleKeyPress}
         />
-        <button className="AddListButton" onClick={handleAddList}>
-          Añadir Lista
-        </button>
+        <div className="Undo">
+          <button className="AddListButton" onClick={handleAddList}>
+            Añadir Lista
+          </button>
+          <button className="X">x</button>
+        </div>
         {lists.map((item, index) => (
           <div key={index} className="list-item">
-            <p>{item}</p>
+            <div className="make-up">{item}</div>
           </div>
         ))}
-        <button className="X">x</button>
       </div>
     </article>
   );
