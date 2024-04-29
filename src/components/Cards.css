@@ -85,6 +85,8 @@ input:focus {
   height: 32px;
   margin: 5px 0px 0px 0px;
   border-radius: 5px;
+  color: rgb(29, 33, 37);
+  font-weight: 500;
 }
 .AddListButton:hover {
   background-color: #75abf7;
@@ -93,9 +95,9 @@ input:focus {
 .X {
   grid-area: 2 / 2 / 3 / 3;
   width: 30px;
-  color: #7f8a8e;
+  color: rgb(182, 194, 207);
   background-color: black;
-  font-weight: bold;
+  line-height: 15px;
   font-size: 1.2em;
   cursor: pointer;
   border-style: none;
