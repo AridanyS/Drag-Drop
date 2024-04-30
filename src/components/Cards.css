@@ -53,8 +53,25 @@ article {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-row-gap: 5px;
+  overflow-x: auto; 
+  overflow-y: hidden; 
 
 }
+/* Gorizontal scroll bar STYLE */
+.BlackCard::-webkit-scrollbar {
+  height: 6px; 
+  background-color: #22262aab; 
+}
+
+.BlackCard::-webkit-scrollbar-thumb {
+  background-color: #5795eb; 
+  border-radius: 5px; 
+}
+
+.BlackCard::-webkit-scrollbar-thumb:hover {
+  background-color: #80aff1; 
+}
+
 .inputTitle {
   width: 250px;
   height: 30px;
@@ -83,9 +100,9 @@ input:focus {
 }
 .AddListButton {
   background-color: #5795eb;
-  width: 98px;
-  height: 32px;
-  margin: 5px 0px 5px 0px;
+  width: 90px;
+  height: 30px;
+  margin: 5px 0px 3px 0px;
   border-radius: 5px;
   color: rgb(29, 33, 37);
   font-weight: 500;
@@ -112,11 +129,14 @@ input:focus {
 }
 .list-item {
   width: 100%;
+  background-color: #22262a;
+  border-radius: 5px;
 }
 .make-up {
   background-color: #22262a;
   color: #b7c2ce;
- 
+  border-radius: 5px;
   padding: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+  margin-top: 5px;
 }
