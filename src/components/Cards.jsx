@@ -1,5 +1,10 @@
 
 import { useState } from "react";
+import {DndContext} from '@dnd-kit/core';
+import { Droppable } from "./Droppable1"
+import { Draggable } from "./Draggable";
+import { App } from "./App";
+
 
 export function Card() {
   const [add, setAdd] = useState(false);
@@ -12,6 +17,7 @@ export function Card() {
     return <AddListName />;
   } else {
     return (
+      <DndContext>
       <article className="article-card1">
         <section className="card-box1">
           <button onClick={handleAdd} className="addList">
@@ -19,7 +25,13 @@ export function Card() {
           </button>
         </section>
       </article>
-    );
+      <Droppable>
+
+      </Droppable>
+      <Draggable></Draggable>
+      </DndContext>
+      
+    ); 
   }
 }
 
@@ -50,7 +62,7 @@ function AddListName() {
         <input
           className="inputTitle"
           type="text"
-          placeholder="Introduzca título de la lista..."
+          placeholder="Introduzca la lista..."
           value={inputValue}
           onChange={handleChange}
           onKeyDown={handleKeyPress}
