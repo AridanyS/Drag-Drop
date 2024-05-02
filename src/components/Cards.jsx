@@ -3,10 +3,9 @@ import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
+  useSortable
 } from "@dnd-kit/sortable";
-//import { Droppable } from "./Droppable1";
-//import { Draggable } from "./Draggable";
-//import { App } from "./App";
+import {CSS} from "@dnd-kit/utilities"
 
 export function Card() {
   const [add, setAdd] = useState(false);
@@ -45,18 +44,26 @@ function AddListName() {
   };
 
   const handleAddList = () => {
-    //.trim evita espacios en blanco
     if (inputValue.trim() !== "") {
       setLists([...lists, inputValue]);
       setInputValue("");
     }
   };
 
-  //Detecta elemento que termina de soltarse
-  const handleDragEnd = () => {};
+  const handleDragEnd = (event) => {
+    const {active, over} = event;
+    if (active.id !== over.id) {
+      const oldIndex = lists.indexOf(active.id);
+      const newIndex = lists.indexOf(over.id);
+      const newLists = [...lists];
+      newLists.splice(oldIndex, 1);
+      newLists.splice(newIndex, 0, active.id);
+      setLists(newLists);
+    }
+  };
+
   return (
     <DndContext
-      //Analiza elementos que se están reordenando
       collisionDetection={closestCenter}
       onDragEnd={handleDragEnd}
     >
@@ -76,23 +83,28 @@ function AddListName() {
             </button>
             <button className="X">x</button>
 
-            {lists.map((item, index) => (
-              //Lista de elementos ordenables
-              <SortableContext
-                key={index}
-                //Array de elementos
-                items={lists}
-                //Que se ordenen verticalmente
-                strategy={verticalListSortingStrategy}
-              >
-                <div className="list-item">
-                  <div className="make-up">{item}</div>
-                </div>
-              </SortableContext>
-            ))}
+            <SortableContext items={lists} strategy={verticalListSortingStrategy}>
+              {lists.map((item, index) => (
+                <SortableItem key={index} id={item} />
+              ))}
+            </SortableContext>
           </div>
         </div>
       </article>
     </DndContext>
+  );
+}
+
+function SortableItem({id}) {
+  const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id})
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+  
+  return (
+    <div className="list-item" style={style} ref={setNodeRef} {...attributes} {...listeners}>
+      <div className="make-up">{id}</div>
+    </div>
   );
 }

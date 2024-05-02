@@ -54,11 +54,11 @@ article {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-row-gap: 5px;
-  overflow-x: auto; 
-  overflow-y: hidden; 
+  /*overflow-x: auto; 
+  overflow-y: hidden;*/
 
 }
-/* Gorizontal scroll bar STYLE */
+/* Gorizontal scroll bar STYLE 
 .BlackCard::-webkit-scrollbar {
   height: 6px; 
   background-color: #22262aab; 
@@ -72,7 +72,7 @@ article {
 
 .BlackCard::-webkit-scrollbar-thumb:hover {
   background-color: #80aff1; 
-}
+}*/
 
 .inputTitle {
   width: 250px;
@@ -144,4 +144,5 @@ input:focus {
 }
 .make-up:hover{
   border: 1px solid #66a1f3;
+  cursor: pointer;
 }
