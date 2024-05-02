@@ -1,10 +1,12 @@
-
 import { useState } from "react";
-import {DndContext} from '@dnd-kit/core';
-import { Droppable } from "./Droppable1"
-import { Draggable } from "./Draggable";
-import { App } from "./App";
-
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+//import { Droppable } from "./Droppable1";
+//import { Draggable } from "./Draggable";
+//import { App } from "./App";
 
 export function Card() {
   const [add, setAdd] = useState(false);
@@ -17,7 +19,6 @@ export function Card() {
     return <AddListName />;
   } else {
     return (
-      <DndContext>
       <article className="article-card1">
         <section className="card-box1">
           <button onClick={handleAdd} className="addList">
@@ -25,13 +26,7 @@ export function Card() {
           </button>
         </section>
       </article>
-      <Droppable>
-
-      </Droppable>
-      <Draggable></Draggable>
-      </DndContext>
-      
-    ); 
+    );
   }
 }
 
@@ -50,36 +45,54 @@ function AddListName() {
   };
 
   const handleAddList = () => {
+    //.trim evita espacios en blanco
     if (inputValue.trim() !== "") {
       setLists([...lists, inputValue]);
-      setInputValue(""); 
+      setInputValue("");
     }
   };
 
+  //Detecta elemento que termina de soltarse
+  const handleDragEnd = () => {};
   return (
-    <article className="article-card2">
-      <div className="BlackCard">
-        <input
-          className="inputTitle"
-          type="text"
-          placeholder="Introduzca la lista..."
-          value={inputValue}
-          onChange={handleChange}
-          onKeyDown={handleKeyPress}
-        />
-        <div className="Undo">
-          <button className="AddListButton" onClick={handleAddList}>
-            Añadir Lista
-          </button>
-          <button className="X">x</button>
-        
-        {lists.map((item, index) => (
-          <div key={index} className="list-item">
-            <div className="make-up">{item}</div>
+    <DndContext
+      //Analiza elementos que se están reordenando
+      collisionDetection={closestCenter}
+      onDragEnd={handleDragEnd}
+    >
+      <article className="article-card2">
+        <div className="BlackCard">
+          <input
+            className="inputTitle"
+            type="text"
+            placeholder="Introduzca la lista..."
+            value={inputValue}
+            onChange={handleChange}
+            onKeyDown={handleKeyPress}
+          />
+          <div className="Undo">
+            <button className="AddListButton" onClick={handleAddList}>
+              Añadir Lista
+            </button>
+            <button className="X">x</button>
+
+            {lists.map((item, index) => (
+              //Lista de elementos ordenables
+              <SortableContext
+                key={index}
+                //Array de elementos
+                items={lists}
+                //Que se ordenen verticalmente
+                strategy={verticalListSortingStrategy}
+              >
+                <div className="list-item">
+                  <div className="make-up">{item}</div>
+                </div>
+              </SortableContext>
+            ))}
           </div>
-          
-        ))}</div>
-      </div>
-    </article>
+        </div>
+      </article>
+    </DndContext>
   );
 }
