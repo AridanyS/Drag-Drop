@@ -3,9 +3,9 @@ import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
-  useSortable
+  useSortable,
 } from "@dnd-kit/sortable";
-import {CSS} from "@dnd-kit/utilities"
+import { CSS } from "@dnd-kit/utilities";
 
 export function Card() {
   const [add, setAdd] = useState(false);
@@ -51,7 +51,7 @@ function AddListName() {
   };
 
   const handleDragEnd = (event) => {
-    const {active, over} = event;
+    const { active, over } = event;
     if (active.id !== over.id) {
       const oldIndex = lists.indexOf(active.id);
       const newIndex = lists.indexOf(over.id);
@@ -63,10 +63,7 @@ function AddListName() {
   };
 
   return (
-    <DndContext
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-    >
+    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <article className="article-card2">
         <div className="BlackCard">
           <input
@@ -83,7 +80,10 @@ function AddListName() {
             </button>
             <button className="X">x</button>
 
-            <SortableContext items={lists} strategy={verticalListSortingStrategy}>
+            <SortableContext
+              items={lists}
+              strategy={verticalListSortingStrategy}
+            >
               {lists.map((item, index) => (
                 <SortableItem key={index} id={item} />
               ))}
@@ -95,15 +95,23 @@ function AddListName() {
   );
 }
 
-function SortableItem({id}) {
-  const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id})
+// eslint-disable-next-line react/prop-types
+function SortableItem({ id }) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id });
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
   };
-  
+
   return (
-    <div className="list-item" style={style} ref={setNodeRef} {...attributes} {...listeners}>
+    <div
+      className="list-item"
+      style={style}
+      ref={setNodeRef}
+      {...attributes}
+      {...listeners}
+    >
       <div className="make-up">{id}</div>
     </div>
   );

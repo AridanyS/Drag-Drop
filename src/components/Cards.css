@@ -141,6 +141,8 @@ input:focus {
   padding: 5px;
   margin-bottom: 7px;
   margin-top: 5px;
+  border: 1px solid transparent; 
+  box-sizing: border-box;
 }
 .make-up:hover{
   border: 1px solid #66a1f3;
