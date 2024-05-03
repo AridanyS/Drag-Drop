@@ -95,7 +95,7 @@ function AddListName() {
             <button className="AddListButton" onClick={handleAddList}>
               Añadir Lista
             </button>
-            <button className="X">x</button>
+            
 
             <SortableContext items={lists} strategy={verticalListSortingStrategy}>
       {lists.map((item, index) => (
@@ -133,7 +133,7 @@ function SortableItem({ id, onRemove }) {
       {...listeners}
     >
       <div className="make-up">{id}</div>
-      <button onMouseDown={handleRemoveMouseDown}>Eliminar</button>
+      <button className="x" onMouseDown={handleRemoveMouseDown}>X</button>
     </div>
   );
 }

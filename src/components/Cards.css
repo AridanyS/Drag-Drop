@@ -47,12 +47,13 @@ article {
 }
 .article-card2 {
   display: flex;
-  background-color: black;
-  width: 275px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  padding: 10px 0px 5px 0px;
+    background-color: black;
+    width: 270px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px 0px 4px 0px;
+    font-size: 0.9em;
 }
 .BlackCard {
   display: grid;
@@ -120,40 +121,46 @@ input:focus {
   background-color: #75abf7;
   cursor: pointer;
 }
-.X {
-  width: 30px;
+.x {
+  width: 16px;
   color: rgb(182, 194, 207);
   background-color: black;
   line-height: 15px;
-  font-size: 1.2em;
   cursor: pointer;
   border-style: none;
-  position: relative;
   border-radius: 5px;
-  height: 33px;
+  height: 17px;
+  position: relative;
+  left: 91%;
+  bottom: 100%;
+
 }
 
-.X:hover {
+.x:hover {
   background-color: #282e33;
 }
 .list-item {
+  display: grid;
+  grid: none;
   width: 100%;
   background-color: #22262a;
   border-radius: 5px;
+  margin: 5px 0px 5px 0px;
+
+}
+.list-item:hover{
+  border: 1px solid #66a1f3;
+  cursor: pointer;
 }
 .make-up {
   background-color: #22262a;
   color: #b7c2ce;
   border-radius: 5px;
-  padding: 5px;
-  margin-bottom: 7px;
-  margin-top: 5px;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
   box-sizing: border-box;
+  text-align: justify;
+  padding: 15px 10px 0px 8px
 }
-.make-up:hover{
-  border: 1px solid #66a1f3;
-  cursor: pointer;
-}
+
 
 
