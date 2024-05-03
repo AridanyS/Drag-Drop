@@ -8,25 +8,25 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 
 export function Card() {
-  const [add, setAdd] = useState(false);
+  const [addListInstances, setAddListInstances] = useState([]);
 
-  const handleAdd = () => {
-    setAdd(true);
+  const handleAddList = () => {
+    setAddListInstances([...addListInstances, {}]);
   };
 
-  if (add) {
-    return <AddListName />;
-  } else {
-    return (
-      <article className="article-card1">
-        <section className="card-box1">
-          <button onClick={handleAdd} className="addList">
-            <span className="mas">+</span> Añade una lista
-          </button>
-        </section>
-      </article>
-    );
-  }
+  return (
+    <article className="article-card1">
+      <section className="card-box1">
+        <button onClick={handleAddList} className="addList">
+          <span className="mas">+</span> Añade una Tarjeta
+        </button>
+      </section>
+      {addListInstances.map((index) => (
+        //Crea un objeto vacío al array e indica que se renderice AddListName cada vez
+        <AddListName key={index} />
+      ))}
+    </article>
+  );
 }
 
 function AddListName() {

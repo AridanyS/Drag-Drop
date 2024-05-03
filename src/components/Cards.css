@@ -38,6 +38,13 @@ article {
 }
 
 /*Funtion AddListName*/
+.article-card1{
+  display: grid;
+    align-content: stretch;
+    justify-content: center;
+    justify-items: center;
+
+}
 .article-card2 {
   display: flex;
   background-color: black;
