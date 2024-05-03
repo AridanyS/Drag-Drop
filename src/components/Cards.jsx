@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { DndContext, closestCenter } from "@dnd-kit/core";
+import {
+  DndContext,
+  closestCenter,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import {
   SortableContext,
   verticalListSortingStrategy,
@@ -21,8 +28,8 @@ export function Card() {
           <span className="mas">+</span> Añade una Tarjeta
         </button>
       </section>
-      {addListInstances.map((index) => (
-        //Crea un objeto vacío al array e indica que se renderice AddListName cada vez
+      {addListInstances.map((_, index) => (
+        // Crea un objeto vacío en el array e indica que se renderice AddListName cada vez
         <AddListName key={index} />
       ))}
     </article>
@@ -32,6 +39,7 @@ export function Card() {
 function AddListName() {
   const [inputValue, setInputValue] = useState("");
   const [lists, setLists] = useState([]);
+  const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -63,7 +71,11 @@ function AddListName() {
   };
 
   return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCenter}
+      onDragEnd={handleDragEnd}
+    >
       <article className="article-card2">
         <div className="BlackCard">
           <input
