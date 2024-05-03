@@ -16,6 +16,8 @@ import { CSS } from "@dnd-kit/utilities";
 
 export function Card() {
   const [addListInstances, setAddListInstances] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
 
   const handleAddList = () => {
     setAddListInstances([...addListInstances, {}]);
@@ -69,6 +71,9 @@ function AddListName() {
       setLists(newLists);
     }
   };
+  const handleRemoveList = (itemToRemove) => {
+    setLists(lists.filter(item => item !== itemToRemove));
+  };
 
   return (
     <DndContext
@@ -92,14 +97,11 @@ function AddListName() {
             </button>
             <button className="X">x</button>
 
-            <SortableContext
-              items={lists}
-              strategy={verticalListSortingStrategy}
-            >
-              {lists.map((item, index) => (
-                <SortableItem key={index} id={item} />
-              ))}
-            </SortableContext>
+            <SortableContext items={lists} strategy={verticalListSortingStrategy}>
+      {lists.map((item, index) => (
+        <SortableItem key={index} id={item} onRemove={() => handleRemoveList(item)} />
+      ))}
+    </SortableContext>
           </div>
         </div>
       </article>
@@ -107,13 +109,19 @@ function AddListName() {
   );
 }
 
+
 // eslint-disable-next-line react/prop-types
-function SortableItem({ id }) {
+function SortableItem({ id, onRemove }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+  };
+
+  const handleRemoveMouseDown = (event) => {
+    event.preventDefault();
+    onRemove();
   };
 
   return (
@@ -125,6 +133,7 @@ function SortableItem({ id }) {
       {...listeners}
     >
       <div className="make-up">{id}</div>
+      <button onMouseDown={handleRemoveMouseDown}>Eliminar</button>
     </div>
   );
 }
