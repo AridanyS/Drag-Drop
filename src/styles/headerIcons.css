@@ -1,0 +1,14 @@
+.linkedin,
+.github {
+  width: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
+  position: relative;
+  left: 20px;
+}
+.trello {
+  width: 30px;
+  margin-top: 10px;
+  position: relative;
+  left: 20px;
+}
