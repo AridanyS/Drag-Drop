@@ -23,7 +23,7 @@ Este proyecto se ha inspirado en la herramienta de gestión de proyectos [Trello
 
 ## Stack Tecnológico
 
-Este proyecto ha sido desarrollado utilizando HTML, CSS, JavaScript y React. Para la compilación, se ha empleado Vite, mientras que para el alojamiento del sitio, se ha optado por Vercel.
+Este proyecto ha sido desarrollado utilizando HTML, CSS, JavaScript y React. Además, se ha utilizado la biblioteca [Dndkit](https://dndkit.com/) para la funcionalidad de arrastrar y soltar. Para la compilación, se ha empleado Vite, y para el alojamiento del sitio, se ha optado por Vercel.
 
 ## Deploy
 Este proyecto está desplegado en la siguiente dirección: 
