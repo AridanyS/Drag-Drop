@@ -12,3 +12,49 @@
   position: relative;
   left: 20px;
 }
+
+.github {
+  display: inline-block;
+  transition-duration: 0.5s;
+  transition-property: transform;
+
+  &:hover {
+    transform: translateY(-6px);
+    animation-name: hover;
+    animation-duration: 1.5s;
+    animation-delay: defaultDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+.trello {
+  display: inline-block;
+  transition-duration: 0.5s;
+  transition-property: transform;
+
+  &:hover {
+    transform: translateY(-6px);
+    animation-name: hover;
+    animation-duration: 1.5s;
+    animation-delay: defaultDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+.linkedin {
+  display: inline-block;
+  transition-duration: 0.5s;
+  transition-property: transform;
+
+  &:hover {
+    transform: translateY(-6px);
+    animation-name: hover;
+    animation-duration: 1.5s;
+    animation-delay: defaultDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
